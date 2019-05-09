@@ -1,0 +1,753 @@
+WEBVTT
+
+1
+00:00:03.920 --> 00:00:07.800
+Now, that we have learnt about Express Generator,
+
+2
+00:00:07.800 --> 00:00:10.890
+the scaffolding tool for experts applications,
+
+3
+00:00:10.890 --> 00:00:17.405
+let's install Express Generator and then create a new Express application.
+
+4
+00:00:17.405 --> 00:00:20.250
+We'll be creating the exact replica of
+
+5
+00:00:20.250 --> 00:00:25.850
+the Express REST API application that we implemented in the previous module.
+
+6
+00:00:25.850 --> 00:00:30.025
+We'll be indeed reusing the three routers,
+
+7
+00:00:30.025 --> 00:00:34.970
+Express routers that we implemented in the previous Express application in
+
+8
+00:00:34.970 --> 00:00:38.690
+the newly generated application that we are going to
+
+9
+00:00:38.690 --> 00:00:43.430
+generate using the Express Generator in this exercise.
+
+10
+00:00:43.430 --> 00:00:48.680
+To get started, your first step is to install the Express Generator.
+
+11
+00:00:48.680 --> 00:00:52.610
+So, at the prompt type "npm
+
+12
+00:00:52.610 --> 00:00:59.210
+install -g" to install it as a global NPM module.
+
+13
+00:00:59.210 --> 00:01:05.120
+We'll say Express Generator and hit the Return.
+
+14
+00:01:05.120 --> 00:01:10.910
+Now, if you're installing on a OSX or a Linux Machine,
+
+15
+00:01:10.910 --> 00:01:14.400
+make sure to use sudo in front of this command.
+
+16
+00:01:14.400 --> 00:01:21.500
+Then install the application as a global application.
+
+17
+00:01:21.500 --> 00:01:29.850
+As you can see, the Express Generator version that I'm using is 4.16.0 in this course.
+
+18
+00:01:29.850 --> 00:01:33.845
+Now, that we have installed the Express Generator, in your terminal,
+
+19
+00:01:33.845 --> 00:01:37.590
+move to the Node.Js folder where you have been storing
+
+20
+00:01:37.590 --> 00:01:42.080
+all the various node applications that we've been developing in this course,
+
+21
+00:01:42.080 --> 00:01:43.745
+in the Node.Js folder.
+
+22
+00:01:43.745 --> 00:01:50.020
+At the prompt type express conFusionServer.
+
+23
+00:01:50.020 --> 00:01:53.865
+Now, if you've been following from the previous courses,
+
+24
+00:01:53.865 --> 00:01:57.410
+you understand why I call it conFusion and so
+
+25
+00:01:57.410 --> 00:02:01.860
+let's scaffold out our express application in the conFusionServer.
+
+26
+00:02:01.860 --> 00:02:07.165
+I'm scaffolding out without any new options and then within a short while,
+
+27
+00:02:07.165 --> 00:02:10.125
+the Express server will be scaffolded out.
+
+28
+00:02:10.125 --> 00:02:14.390
+Now, move into the conFusionServer folder and then
+
+29
+00:02:14.390 --> 00:02:18.680
+you would see that a bunch of files are already been scaffolded out for you.
+
+30
+00:02:18.680 --> 00:02:23.645
+So, let's open this project in Visual Studio Code.
+
+31
+00:02:23.645 --> 00:02:28.935
+Also, at the prompt type "npm
+
+32
+00:02:28.935 --> 00:02:33.110
+install" to install all the NPM modules
+
+33
+00:02:33.110 --> 00:02:36.070
+that are already included in the package.json file.
+
+34
+00:02:36.070 --> 00:02:39.590
+So, let's take a quick look at the package.json file to see what are
+
+35
+00:02:39.590 --> 00:02:44.360
+all the various NPM Node modules that are going to be installed.
+
+36
+00:02:44.360 --> 00:02:46.200
+Going to our application,
+
+37
+00:02:46.200 --> 00:02:48.175
+in the package.json file,
+
+38
+00:02:48.175 --> 00:02:52.550
+you see that the server with the default name
+
+39
+00:02:52.550 --> 00:02:57.200
+has been scaffolded out and you see a bunch of dependencies that are declared here.
+
+40
+00:02:57.200 --> 00:03:02.390
+So, all these NPM modules are going to be automatically installed for
+
+41
+00:03:02.390 --> 00:03:08.970
+you by NPM when you type "npm install" in this folder.
+
+42
+00:03:08.970 --> 00:03:13.370
+So, you will see the Node modules folder being created here.
+
+43
+00:03:13.370 --> 00:03:17.600
+Go into the terminal, type "npm install" and then let it
+
+44
+00:03:17.600 --> 00:03:22.320
+proceed with installing all the various NPM modules.
+
+45
+00:03:22.320 --> 00:03:23.985
+Once they are all completed,
+
+46
+00:03:23.985 --> 00:03:29.810
+then we are ready to get started with our Express application.
+
+47
+00:03:29.810 --> 00:03:34.595
+You would notice that the default Express application has already been installed.
+
+48
+00:03:34.595 --> 00:03:35.710
+So at the prompt,
+
+49
+00:03:35.710 --> 00:03:38.105
+if you just simply say npm start,
+
+50
+00:03:38.105 --> 00:03:42.295
+the default application will start up and you can
+
+51
+00:03:42.295 --> 00:03:48.500
+browse using your standard browser to see what this application serves up.
+
+52
+00:03:48.500 --> 00:03:58.645
+Go into Postman at the address block type localhost:3000 and
+
+53
+00:03:58.645 --> 00:04:03.185
+send the request and you will see that your server will return
+
+54
+00:04:03.185 --> 00:04:12.045
+this default information from the server site.
+
+55
+00:04:12.045 --> 00:04:20.075
+So, this is the standard Express server that is scaffolded out by Express Generator.
+
+56
+00:04:20.075 --> 00:04:23.550
+On the console, you'll see information like this printed here.
+
+57
+00:04:23.550 --> 00:04:30.180
+This is what Morgan prints out on the screen to show the requests coming in.
+
+58
+00:04:30.180 --> 00:04:34.955
+So, it shows the type of request to which URL
+
+59
+00:04:34.955 --> 00:04:40.820
+and the corresponding response that has been sent back to the client from the server.
+
+60
+00:04:40.820 --> 00:04:45.050
+Let's stop the Express server.
+
+61
+00:04:45.050 --> 00:04:49.430
+Let's initialize a Git repository and then
+
+62
+00:04:49.430 --> 00:04:57.360
+we'll check the Git status and you'll see that the node modules is being included.
+
+63
+00:04:57.360 --> 00:05:03.800
+So, let me switch over to my application and then create
+
+64
+00:05:03.800 --> 00:05:10.895
+a gitignore file and then in the gitignore file,
+
+65
+00:05:10.895 --> 00:05:17.470
+let me specify the node modules as a file that I want to ignore.
+
+66
+00:05:17.470 --> 00:05:20.815
+Then coming back to the terminal,
+
+67
+00:05:20.815 --> 00:05:25.090
+let me check the git status and you see that now
+
+68
+00:05:25.090 --> 00:05:30.385
+we are going to be checking in only those files that are part of our application.
+
+69
+00:05:30.385 --> 00:05:33.925
+So, at the prompt, type git add,
+
+70
+00:05:33.925 --> 00:05:42.085
+and then say, git status and you see all the files have been checked in.
+
+71
+00:05:42.085 --> 00:05:50.725
+So, you say, git commit -m "Express Generator".
+
+72
+00:05:50.725 --> 00:05:54.500
+Now, we're going to continue with this Express application.
+
+73
+00:05:54.500 --> 00:05:58.820
+We had already built the three routers using
+
+74
+00:05:58.820 --> 00:06:04.505
+the Express router in the previous Express application that we implemented.
+
+75
+00:06:04.505 --> 00:06:09.965
+We're going to copy over those three routers to this application that we generated using
+
+76
+00:06:09.965 --> 00:06:16.240
+Express Generator and also set up this application to make use of those three routers.
+
+77
+00:06:16.240 --> 00:06:17.980
+So, to do that,
+
+78
+00:06:17.980 --> 00:06:24.120
+let me go to the Node.Js folder and then,
+
+79
+00:06:24.120 --> 00:06:27.670
+going into the node express folder and routes,
+
+80
+00:06:27.670 --> 00:06:30.380
+I'm going to copy the dishRouter.js,
+
+81
+00:06:30.380 --> 00:06:34.460
+leaderRouter.js router.js and promoRouter.js that I have implemented
+
+82
+00:06:34.460 --> 00:06:39.410
+in the assignment and we'll come over to
+
+83
+00:06:39.410 --> 00:06:45.170
+the conFusionServer that I have just created and into the routes folder and then copy
+
+84
+00:06:45.170 --> 00:06:51.720
+over those three Express routers that we created there.
+
+85
+00:06:51.720 --> 00:06:58.140
+So automatically, now modifying the app.js file,
+
+86
+00:06:58.140 --> 00:07:01.250
+we will be able to support the REST API using
+
+87
+00:07:01.250 --> 00:07:05.080
+the Express application that we have just scaffolded out.
+
+88
+00:07:05.080 --> 00:07:09.535
+Paying a quick a visit to the application that has been scaffolded out.
+
+89
+00:07:09.535 --> 00:07:12.515
+As I mentioned in the previous lecture,
+
+90
+00:07:12.515 --> 00:07:16.780
+the app.js is the place where it all begins.
+
+91
+00:07:16.780 --> 00:07:20.540
+So, this is the standard file so you can see some of
+
+92
+00:07:20.540 --> 00:07:25.360
+the things that you're familiar with from the previous module.
+
+93
+00:07:25.360 --> 00:07:31.440
+So, we are requiring express path logger which is morgan in this case.
+
+94
+00:07:31.440 --> 00:07:35.570
+CookieParser which we will use in one of the later exercises and you
+
+95
+00:07:35.570 --> 00:07:40.170
+also see that you are importing two routes;
+
+96
+00:07:40.170 --> 00:07:42.220
+the index and the users,
+
+97
+00:07:42.220 --> 00:07:45.225
+which are already scaffolded out by Express for us.
+
+98
+00:07:45.225 --> 00:07:51.300
+So, we will add in the three new routers here.
+
+99
+00:07:51.300 --> 00:08:00.734
+So, I'll just say, var dishRouter require routes
+
+100
+00:08:00.734 --> 00:08:10.480
+dishRouter and then they will copy this and then also import
+
+101
+00:08:10.480 --> 00:08:24.470
+the promoRouter and the leaderRouter
+
+102
+00:08:26.670 --> 00:08:32.315
+and we will set these up to be used here.
+
+103
+00:08:32.315 --> 00:08:35.735
+Here you see that the index is mounted at
+
+104
+00:08:35.735 --> 00:08:40.070
+the slash and then the users is mounted at /users.
+
+105
+00:08:40.070 --> 00:08:43.160
+So, we'll say, app use
+
+106
+00:08:43.160 --> 00:08:52.970
+and dishes dishRouter.
+
+107
+00:08:52.970 --> 00:08:54.840
+It's Four O'clock.
+
+108
+00:08:59.890 --> 00:09:17.910
+Promotions promoRouter and leaders.
+
+109
+00:09:18.030 --> 00:09:22.735
+LeaderRouter. That's it.
+
+110
+00:09:22.735 --> 00:09:27.045
+Our Express application that has been scaffolded out is now all set up
+
+111
+00:09:27.045 --> 00:09:32.000
+to be a full-fledged REST API Server which will serve up for dish,
+
+112
+00:09:32.000 --> 00:09:34.595
+dishes, promotions and leaders.
+
+113
+00:09:34.595 --> 00:09:37.630
+Now, if you browse through the rest of the code,
+
+114
+00:09:37.630 --> 00:09:41.175
+it'll look all familiar with a few new things in there.
+
+115
+00:09:41.175 --> 00:09:47.290
+We will visit them as and when we require to understand a bit more details there.
+
+116
+00:09:47.290 --> 00:09:50.655
+So, you can see that the static server has been setup,
+
+117
+00:09:50.655 --> 00:09:56.150
+the logger has been set up there and some of this other- so,
+
+118
+00:09:56.150 --> 00:10:02.315
+this one is a global handler for errors.
+
+119
+00:10:02.315 --> 00:10:06.150
+We'll see how to make use of it in more detail.
+
+120
+00:10:06.150 --> 00:10:10.855
+And these two are additional error handlers that follow after this.
+
+121
+00:10:10.855 --> 00:10:16.635
+We will see how we make use of them as we implement further in this application.
+
+122
+00:10:16.635 --> 00:10:19.325
+So, this is where you notice all this information.
+
+123
+00:10:19.325 --> 00:10:23.140
+Now, you're wondering where the server itself is
+
+124
+00:10:23.140 --> 00:10:27.575
+configured to the local host and the port number are configured.
+
+125
+00:10:27.575 --> 00:10:34.840
+Now, this information is in this file called bin/www.
+
+126
+00:10:34.840 --> 00:10:38.075
+If you open the bin/www folder,
+
+127
+00:10:38.075 --> 00:10:40.340
+you will see additional information here.
+
+128
+00:10:40.340 --> 00:10:44.340
+So, it says, var app require.. slash/app.
+
+129
+00:10:44.340 --> 00:10:46.330
+So, from the bin folder,
+
+130
+00:10:46.330 --> 00:10:47.480
+you come up here and then,
+
+131
+00:10:47.480 --> 00:10:50.805
+this app.js file is required here into this;
+
+132
+00:10:50.805 --> 00:10:54.245
+and so, that will automatically include the express and everything.
+
+133
+00:10:54.245 --> 00:10:56.440
+And then, in here you're setting up
+
+134
+00:10:56.440 --> 00:11:00.510
+the http server here and you're setting up the port number.
+
+135
+00:11:00.510 --> 00:11:04.570
+You can also supply your own port number at the command line,
+
+136
+00:11:04.570 --> 00:11:08.575
+but at the moment we are going to use the default value, which is 3000,
+
+137
+00:11:08.575 --> 00:11:11.830
+and we'll set up the port number here; and then,
+
+138
+00:11:11.830 --> 00:11:16.935
+you see the var server http.createServer that you have seen earlier,
+
+139
+00:11:16.935 --> 00:11:20.590
+and the server is listening for things here.
+
+140
+00:11:20.590 --> 00:11:28.050
+And then, also, here are some listening for events on the server side.
+
+141
+00:11:28.050 --> 00:11:30.940
+We'll come back to this in one of the later exercises.
+
+142
+00:11:30.940 --> 00:11:33.320
+And then, down below you'll see some additional
+
+143
+00:11:33.320 --> 00:11:36.560
+code that sets up your server to be able to
+
+144
+00:11:36.560 --> 00:11:43.170
+handle errors and listen for incoming requests on the port number and so on.
+
+145
+00:11:43.170 --> 00:11:46.080
+At the moment, don't worry too much about this code.
+
+146
+00:11:46.080 --> 00:11:48.730
+We will revisit this code whenever we require,
+
+147
+00:11:48.730 --> 00:11:55.580
+and we will be modifying this code as and when we require in one of the later exercises.
+
+148
+00:11:55.580 --> 00:12:01.595
+So, that is where your server information is all set up there.
+
+149
+00:12:01.595 --> 00:12:06.070
+And app.js, we have already seen the routes folder there.
+
+150
+00:12:06.070 --> 00:12:15.530
+Index.js and users.js are two default routes that are set up already for us.
+
+151
+00:12:15.530 --> 00:12:19.575
+We will be using the users.js in one of the later exercises.
+
+152
+00:12:19.575 --> 00:12:21.900
+And in the public folder,
+
+153
+00:12:21.900 --> 00:12:25.410
+let's go ahead and copy the index.html and
+
+154
+00:12:25.410 --> 00:12:31.345
+aboutus.html from our Express application into the public folder also.
+
+155
+00:12:31.345 --> 00:12:39.895
+So, going back to the node-express public folder.
+
+156
+00:12:39.895 --> 00:12:42.250
+I'm just going to copy these two.
+
+157
+00:12:42.250 --> 00:12:47.135
+And then, we'll come back to the confusion server;
+
+158
+00:12:47.135 --> 00:12:49.840
+and then, in the public folder,
+
+159
+00:12:49.840 --> 00:12:52.410
+I'm going to simply paste them into place.
+
+160
+00:12:52.410 --> 00:12:54.355
+For the moment, these are placeholders.
+
+161
+00:12:54.355 --> 00:12:57.960
+Later on, we will be replacing them with other things.
+
+162
+00:12:57.960 --> 00:13:00.240
+So, with these changes,
+
+163
+00:13:00.240 --> 00:13:04.385
+our server is now fully set up to run as
+
+164
+00:13:04.385 --> 00:13:09.235
+a REST API Server and will support all the REST API endpoints.
+
+165
+00:13:09.235 --> 00:13:13.105
+So, let's start our server.
+
+166
+00:13:13.105 --> 00:13:14.680
+So, at the prompt,
+
+167
+00:13:14.680 --> 00:13:19.910
+type npm start and your server will be up and running.
+
+168
+00:13:19.910 --> 00:13:24.555
+Let's go to PostBin and send a few requests to this server.
+
+169
+00:13:24.555 --> 00:13:29.545
+Let's now send a get request to local host 3000/dishes,
+
+170
+00:13:29.545 --> 00:13:36.210
+and you will notice that the REST API Server is working exactly as we expect.
+
+171
+00:13:36.210 --> 00:13:41.250
+We send a request of delete and it will delete the dishes.
+
+172
+00:13:41.250 --> 00:13:44.580
+And then, let's send
+
+173
+00:13:44.580 --> 00:13:49.800
+a delete request to promotions and you see that it works just like before.
+
+174
+00:13:49.800 --> 00:13:55.075
+And we do a post to promotions
+
+175
+00:13:55.075 --> 00:14:09.430
+with the body fielding
+
+176
+00:14:23.730 --> 00:14:26.725
+and send the post request,
+
+177
+00:14:26.725 --> 00:14:28.750
+and you will see that it says,
+
+178
+00:14:28.750 --> 00:14:31.790
+"We'll add the promotion test with detailed description."
+
+179
+00:14:31.790 --> 00:14:38.425
+Let's send this to leaders.23,
+
+180
+00:14:38.425 --> 00:14:45.190
+but put request to leaders.23 and you should see that it says, "Updating leader 23.
+
+181
+00:14:45.190 --> 00:14:47.655
+Will upgrade the leader." So, you see that
+
+182
+00:14:47.655 --> 00:14:51.780
+the Express generator that generated the application and we have modified
+
+183
+00:14:51.780 --> 00:14:55.060
+it to support the entire REST API endpoints that
+
+184
+00:14:55.060 --> 00:14:59.315
+we configured in the previous version of the Express router.
+
+185
+00:14:59.315 --> 00:15:05.020
+Now, with this, we complete this exercise where we have demonstrated how we can
+
+186
+00:15:05.020 --> 00:15:10.610
+use the Express generator to build up the REST API endpoint.
+
+187
+00:15:10.610 --> 00:15:17.740
+Now, this is a good time for us to do a Git Kermit of the changes with the message,
+
+188
+00:15:17.740 --> 00:15:21.110
+"Express generator REST API."
